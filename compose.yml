@@ -1,0 +1,10 @@
+name: dmoj
+
+services:
+  db:
+    image: mariadb:10
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: axk
+      MARIADB_DATABASE: dmoj
