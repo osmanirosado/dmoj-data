@@ -44,4 +44,4 @@ from auth_user pu
 select *
 from oci_users;
 
-drop view oci_users;
+# drop view oci_users;
