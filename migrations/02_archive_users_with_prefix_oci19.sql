@@ -1,3 +1,6 @@
+-- Migration to archive the users with username prefix equal to oci19
+-- State: Applied migration
+
 start transaction;
 
 drop view if exists oci_users;

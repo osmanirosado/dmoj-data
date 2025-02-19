@@ -1,3 +1,6 @@
+-- Migration to archive the data of the user oci_ss1-
+-- State: Applied migration
+
 start transaction;
 
 drop view if exists oci_users;
