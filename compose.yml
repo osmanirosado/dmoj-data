@@ -5,6 +5,8 @@ services:
     image: mariadb:10
     ports:
       - "127.0.0.1:3306:3306"
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
     environment:
       MARIADB_ROOT_PASSWORD: axk
       MARIADB_DATABASE: dmoj
