@@ -1,3 +1,6 @@
+-- Migration to delete the users with username prefix equal to oci19
+-- State: Applied migration
+
 start transaction;
 
 create view oci19_user as
