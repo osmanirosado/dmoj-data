@@ -11,3 +11,7 @@ docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj'
 ```shell
 docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj' < 03_delete_oci19_users.sql
 ```
+
+```shell
+docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj' < 04_archive_users_with_prefix_oci.sql
+```

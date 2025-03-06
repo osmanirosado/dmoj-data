@@ -1,5 +1,5 @@
 -- Migration to archive the data of the users with username prefix equal to oci_
--- State: Pending migration
+-- State: Applied
 
 start transaction;
 
@@ -19,7 +19,7 @@ from auth_user pu
          join judge_profile sp on su.id = sp.user_id;
 
 # select *
-# from oci_users;
+# from oci_user;
 
 # Archive new contest participation
 update judge_contestparticipation t
@@ -69,8 +69,6 @@ set user_id = (select secondary_user_id
                where r.user_id = primary_user_id)
 where user_id in (select primary_user_id
                   from oci_user);
-
-drop view oci19_user;
 
 drop view oci_user;
 
