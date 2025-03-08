@@ -1,44 +1,44 @@
-DELIMITER //
+delimiter //
 
-CREATE FUNCTION build_count_query(IN referencing_table VARCHAR(255), IN referencing_column VARCHAR(255),
-                            IN referenced_table VARCHAR(255), IN referenced_column VARCHAR(255))
-    RETURNS VARCHAR(512)
-BEGIN
-    DECLARE result VARCHAR(512);
+create function build_count_query(in referencing_table varchar(255), in referencing_column varchar(255),
+                                  in referenced_table varchar(255), in referenced_column varchar(255))
+    returns varchar(512)
+begin
+    declare result varchar(512);
 
-    SET @template = '
-        SELECT COUNT(*) AS rows_count
-        FROM {{referenced_table}} d
-            JOIN {{referencing_table}} s ON d.{{referenced_column}} = s.{{referencing_column}};
+    set @template = '
+        select count(*) as rows_count
+        from {{referenced_table}} d
+            join {{referencing_table}} s on d.{{referenced_column}} = s.{{referencing_column}};
     ';
 
     -- Replace placeholders with actual values
-    SET @sql = REPLACE(@template, '{{referenced_table}}', referenced_table);
-    SET @sql = REPLACE(@sql, '{{referenced_column}}', referenced_column);
-    SET @sql = REPLACE(@sql, '{{referencing_table}}', referencing_table);
-    SET @sql = REPLACE(@sql, '{{referencing_column}}', referencing_column);
+    set @sql = replace(@template, '{{referenced_table}}', referenced_table);
+    set @sql = replace(@sql, '{{referenced_column}}', referenced_column);
+    set @sql = replace(@sql, '{{referencing_table}}', referencing_table);
+    set @sql = replace(@sql, '{{referencing_column}}', referencing_column);
 
-    SELECT @sql INTO result;
-    RETURN result;
-END //
+    select @sql into result;
+    return result;
+end //
 
-DELIMITER ;
+delimiter ;
 
-SELECT build_count_query('judge_contestparticipation', 'user_id',
+select build_count_query('judge_contestparticipation', 'user_id',
                    'oci_user', 'primary_profile_id') as query;
 
-SELECT build_count_query(TABLE_NAME,
-                   COLUMN_NAME,
+select build_count_query(table_name,
+                         column_name,
                    'oci_user',
                    'primary_profile_id') as query
-FROM information_schema.KEY_COLUMN_USAGE
-WHERE REFERENCED_TABLE_NAME = 'judge_profile'
-  AND REFERENCED_TABLE_SCHEMA = 'dmoj';
+from information_schema.key_column_usage
+where referenced_table_name = 'judge_profile'
+  and referenced_table_schema = 'dmoj';
 
-SELECT build_count_query(TABLE_NAME,
-                   COLUMN_NAME,
+select build_count_query(table_name,
+                         column_name,
                    'oci_user',
                    'secondary_profile_id') as query
-FROM information_schema.KEY_COLUMN_USAGE
-WHERE REFERENCED_TABLE_NAME = 'judge_profile'
-  AND REFERENCED_TABLE_SCHEMA = 'dmoj';
+from information_schema.key_column_usage
+where referenced_table_name = 'judge_profile'
+  and referenced_table_schema = 'dmoj';

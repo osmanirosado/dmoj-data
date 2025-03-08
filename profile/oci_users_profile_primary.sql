@@ -1,149 +1,149 @@
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_rating s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_rating s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_comment s ON d.primary_profile_id = s.author_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_comment s on d.primary_profile_id = s.author_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_webauthncredential s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_webauthncredential s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_class_admins s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_class_admins s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_ticket_assignees s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_ticket_assignees s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_class_members s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_class_members s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_authors s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_authors s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contestparticipation s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contestparticipation s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_spectators s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_spectators s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_organizationrequest s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_organizationrequest s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_problempointsvote s ON d.primary_profile_id = s.voter_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_problempointsvote s on d.primary_profile_id = s.voter_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_problem_banned_users s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_problem_banned_users s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_view_contest_submissions s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_view_contest_submissions s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_problem_curators s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_problem_curators s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_profile_organizations s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_profile_organizations s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_curators s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_curators s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_testers s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_testers s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_ticketmessage s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_ticketmessage s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_organization_admins s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_organization_admins s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_solution_authors s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_solution_authors s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_blogpost_authors s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_blogpost_authors s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_problem_authors s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_problem_authors s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_view_contest_scoreboard s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_view_contest_scoreboard s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_problem_testers s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_problem_testers s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_commentvote s ON d.primary_profile_id = s.voter_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_commentvote s on d.primary_profile_id = s.voter_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_rate_exclude s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_rate_exclude s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_submission s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_submission s on d.primary_profile_id = s.user_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_private_contestants s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_private_contestants s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_contest_banned_users s ON d.primary_profile_id = s.profile_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_contest_banned_users s on d.primary_profile_id = s.profile_id;
 
 
-SELECT COUNT(*) AS rows_count
-FROM oci_user d
-         JOIN judge_ticket s ON d.primary_profile_id = s.user_id;
+select count(*) as rows_count
+from oci_user d
+         join judge_ticket s on d.primary_profile_id = s.user_id;
     
