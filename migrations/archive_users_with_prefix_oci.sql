@@ -46,7 +46,7 @@ set user_id = (select secondary_profile_id
 where user_id in (select primary_profile_id
                   from oci_user);
 
-# Archive new judge tickets
+# Archive new tickets
 update judge_ticket t
 set user_id = (select secondary_profile_id
                from oci_user
@@ -54,13 +54,29 @@ set user_id = (select secondary_profile_id
 where user_id in (select primary_profile_id
                   from oci_user);
 
-# Archive new judge ticket messages
+# Archive new ticket messages
 update judge_ticketmessage t
 set user_id = (select secondary_profile_id
                from oci_user
                where t.user_id = primary_profile_id)
 where user_id in (select primary_profile_id
                   from oci_user);
+
+# Archive new comments
+update judge_comment t
+set author_id = (select secondary_profile_id
+                 from oci_user
+                 where t.author_id = primary_profile_id)
+where author_id in (select primary_profile_id
+                    from oci_user);
+
+# Archive new comments votes
+update judge_commentvote t
+set voter_id = (select secondary_profile_id
+                from oci_user
+                where t.voter_id = primary_profile_id)
+where voter_id in (select primary_profile_id
+                   from oci_user);
 
 # Archive new reversion data
 update reversion_revision r
