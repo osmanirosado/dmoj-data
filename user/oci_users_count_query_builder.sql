@@ -25,11 +25,11 @@ END //
 DELIMITER ;
 
 SELECT build_count_query('judge_contestparticipation', 'user_id',
-                   'oci_users', 'primary_profile_id') as query;
+                   'oci_user', 'primary_profile_id') as query;
 
 SELECT build_count_query(TABLE_NAME,
                    COLUMN_NAME,
-                   'oci_users',
+                   'oci_user',
                    'primary_profile_id') as query
 FROM information_schema.KEY_COLUMN_USAGE
 WHERE REFERENCED_TABLE_NAME = 'judge_profile'
@@ -37,7 +37,7 @@ WHERE REFERENCED_TABLE_NAME = 'judge_profile'
 
 SELECT build_count_query(TABLE_NAME,
                    COLUMN_NAME,
-                   'oci_users',
+                   'oci_user',
                    'secondary_profile_id') as query
 FROM information_schema.KEY_COLUMN_USAGE
 WHERE REFERENCED_TABLE_NAME = 'judge_profile'

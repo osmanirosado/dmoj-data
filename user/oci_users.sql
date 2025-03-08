@@ -26,10 +26,10 @@ select concat('_', username) as name
 from auth_user
 where username regexp '^oci_[a-z]+[0-9]+$';
 
-drop view if exists oci_users;
+drop view if exists oci_user;
 
 # OCI users mapping
-create view oci_users as
+create view oci_user as
 select pu.username as primary_username,
        su.username as secondary_username,
        pp.id       as primary_profile_id,
@@ -42,6 +42,6 @@ from auth_user pu
          join judge_profile sp on su.id = sp.user_id;
 
 select *
-from oci_users;
+from oci_user;
 
-# drop view oci_users;
+# drop view oci_user;

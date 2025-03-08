@@ -9,7 +9,7 @@ create table oci_user_materialized
 
 insert into oci_user_materialized(primary_username, secondary_username, primary_profile_id, secondary_profile_id)
 select primary_username, secondary_username, primary_profile_id, secondary_profile_id
-from oci_users;
+from oci_user;
 
 delete
 from oci_user_materialized

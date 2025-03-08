@@ -3,9 +3,9 @@
 
 start transaction;
 
-drop view if exists oci_users;
+drop view if exists oci_user;
 
-create view oci_users as
+create view oci_user as
 select pu.username as primary_username,
        su.username as secondary_username,
        pp.id       as primary_profile_id,
@@ -18,32 +18,32 @@ from auth_user pu
          join judge_profile sp on su.id = sp.user_id;
 
 select *
-from oci_users;
+from oci_user;
 
 # Archive new contest participation
 update judge_contestparticipation t
 set user_id = (select secondary_profile_id
-               from oci_users
+               from oci_user
                where t.user_id = primary_profile_id)
 where user_id in (select primary_profile_id
-                  from oci_users);
+                  from oci_user);
 
 # Archive new submissions
 update judge_submission t
 set user_id = (select secondary_profile_id
-               from oci_users
+               from oci_user
                where t.user_id = primary_profile_id)
 where user_id in (select primary_profile_id
-                  from oci_users);
+                  from oci_user);
 
 # Archive new judge comments
 update judge_comment t
 set author_id = (select secondary_profile_id
-                 from oci_users
+                 from oci_user
                  where t.author_id = primary_profile_id)
 where author_id in (select primary_profile_id
-                    from oci_users);
+                    from oci_user);
 
-drop view oci_users;
+drop view oci_user;
 
 commit;
