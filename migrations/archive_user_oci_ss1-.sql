@@ -1,5 +1,5 @@
 -- Migration to archive the data of the user oci_ss1-
--- State: Applied migration
+-- State: Applied
 
 start transaction;
 
