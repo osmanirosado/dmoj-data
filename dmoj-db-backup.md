@@ -8,7 +8,7 @@ ssh dmoj
 
 El comando `mysqldump` se ejecuta dentro del contenedor `dmoj_mysql`.
 El backup se escribe en el script `dmoj_db_backup_2025-02-10.sql` fuera del contenedor.
-```
+```shell
 docker exec -i dmoj_mysql sh -c 'mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" --routines --triggers dmoj' > ~/dmoj_db_backup_2025-02-16.sql
 ```
 
@@ -37,7 +37,7 @@ realpath dmoj_db_backup_2025-02-10.zip
 /home/uclv/dmoj_db_backup_2025-02-10.zip
 ```
 
-## Remote Desktop
+## Local Desktop
 
 ```shell
 scp dmoj:/home/uclv/dmoj_db_backup_2025-02-10.zip ~/Downloads/
@@ -60,5 +60,9 @@ docker compose up db
 
 ```shell
 docker compose exec -T db sh -c 'mysql -u root -p"$MARIADB_ROOT_PASSWORD" dmoj' < dmoj_db_backup_2025-02-16.sql
+```
+
+```shell
+docker compose exec -T db sh -c 'mysqldump -u root -p"$MARIADB_ROOT_PASSWORD" --routines --triggers --no-data dmoj' > dmoj-schema.sql
 ```
 
