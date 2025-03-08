@@ -1,32 +1,32 @@
-SELECT TABLE_NAME             AS referencing_table,
-       COLUMN_NAME            AS referencing_column,
-       REFERENCED_TABLE_NAME  AS referenced_table,
-       REFERENCED_COLUMN_NAME AS referenced_column
-FROM information_schema.KEY_COLUMN_USAGE
-WHERE REFERENCED_TABLE_NAME = 'auth_user'
-  AND REFERENCED_TABLE_SCHEMA = 'dmoj';
+select table_name             as referencing_table,
+       column_name            as referencing_column,
+       referenced_table_name  as referenced_table,
+       referenced_column_name as referenced_column
+from information_schema.key_column_usage
+where referenced_table_name = 'auth_user'
+  and referenced_table_schema = 'dmoj';
 
-DROP PROCEDURE IF EXISTS get_foreign_key_references;
+drop procedure if exists get_foreign_key_references;
 
-DELIMITER //
+delimiter //
 
-CREATE PROCEDURE get_foreign_key_references(
-    IN dbName VARCHAR(255),
-    IN tableName VARCHAR(255)
+create procedure get_foreign_key_references(
+    in dbname varchar(255),
+    in tablename varchar(255)
 )
-BEGIN
-    SELECT TABLE_NAME             AS referencing_table,
-           COLUMN_NAME            AS referencing_column,
-           REFERENCED_TABLE_NAME  AS referenced_table,
-           REFERENCED_COLUMN_NAME AS referenced_column
-    FROM information_schema.KEY_COLUMN_USAGE
-    WHERE REFERENCED_TABLE_NAME = tableName
-      AND REFERENCED_TABLE_SCHEMA = dbName
-    ORDER BY referencing_table;
-END //
+begin
+    select table_name             as referencing_table,
+           column_name            as referencing_column,
+           referenced_table_name  as referenced_table,
+           referenced_column_name as referenced_column
+    from information_schema.key_column_usage
+    where referenced_table_name = tablename
+      and referenced_table_schema = dbname
+    order by referencing_table;
+end //
 
-DELIMITER ;
+delimiter ;
 
-CALL get_foreign_key_references('dmoj', 'auth_user');
+call get_foreign_key_references('dmoj', 'auth_user');
 
-CALL get_foreign_key_references('dmoj', 'judge_profile');
+call get_foreign_key_references('dmoj', 'judge_profile');
