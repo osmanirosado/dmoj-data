@@ -63,6 +63,6 @@ docker compose exec -T db sh -c 'mysql -u root -p"$MARIADB_ROOT_PASSWORD" dmoj' 
 ```
 
 ```shell
-docker compose exec -T db sh -c 'mysqldump -u root -p"$MARIADB_ROOT_PASSWORD" --routines --triggers --no-data dmoj' > dmoj-schema.sql
+docker compose exec -T db sh -c 'mysqldump -u root -p"$MARIADB_ROOT_PASSWORD" --routines --triggers --no-data dmoj' > dmoj_schema.sql
 ```
 

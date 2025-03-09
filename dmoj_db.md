@@ -1,4 +1,4 @@
-# DMOJ Database Backup
+# DMOJ Database
 
 ## DMOJ Server
 
