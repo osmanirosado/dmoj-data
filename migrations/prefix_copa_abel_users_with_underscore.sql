@@ -1,10 +1,10 @@
 -- Migration to prefix the username of copa users with _
--- The queries for revision are stored on user/copa_abel_users.sql
+-- Status: Applied
 
 start transaction;
 
-set @organization_short_name = 'Copa Abel' collate utf8mb4_uca1400_as_ci;
-set @username_pattern = '^copa[0-9]+$' collate utf8mb4_uca1400_as_ci;
+set @organization_short_name = 'Copa Abel';
+set @username_pattern = '^copa[0-9]+$';
 
 -- Remove users from the organization
 delete jpo

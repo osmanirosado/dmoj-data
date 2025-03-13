@@ -1,8 +1,8 @@
 -- Copa Abel users
 
-set @organization_short_name = 'Copa Abel' collate utf8mb4_uca1400_as_ci;
-set @primary_username_pattern = '^copa[0-9]+$' collate utf8mb4_uca1400_as_ci;
-set @secondary_username_pattern = '^_copa[0-9]+$' collate utf8mb4_uca1400_as_ci;
+set @organization_short_name = 'Copa Abel';
+set @primary_username_pattern = '^copa[0-9]+$';
+set @secondary_username_pattern = '^_copa[0-9]+$';
 select @secondary_username_pattern;
 
 -- Primary Users
