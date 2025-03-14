@@ -23,3 +23,7 @@ select username
 from auth_user
 where username like 'oci\_%';
 ```
+
+```shell
+docker exec -it dmoj_mysql sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" dmoj'
+```
