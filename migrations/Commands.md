@@ -17,5 +17,5 @@ docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj'
 ```
 
 ```shell
-docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj' < prefix_copa_abel_users_with_underscore.sql
+docker exec -i dmoj_mysql sh -c 'mysql -v -u root -p"$MYSQL_ROOT_PASSWORD" dmoj' < prefix_copa_users_with_underscore.sql
 ```
