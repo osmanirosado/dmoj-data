@@ -6,6 +6,7 @@ services:
     ports:
       - "127.0.0.1:3304:3306"
     volumes:
+      - ./conf:/etc/mysql/conf.d:ro
       - ./initdb:/docker-entrypoint-initdb.d
     environment:
       MARIADB_ROOT_PASSWORD: axk
