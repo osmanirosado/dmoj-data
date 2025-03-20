@@ -1,4 +1,4 @@
--- Copa Abel users
+-- copa users
 
 set @primary_username_pattern = '^copa[0-9]+$';
 set @secondary_username_pattern = '^_copa[0-9]+$';
