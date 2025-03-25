@@ -1,4 +1,4 @@
--- Migration to archive the data of the users with username prefix equal to oci_
+-- Migration to archive the data of the users with username prefix equal to copa
 -- State: Applied
 
 start transaction;
