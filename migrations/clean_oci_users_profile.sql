@@ -10,7 +10,8 @@ update judge_profile
 set points             = 0,
     problem_count      = 0,
     performance_points = 0,
-    rating             = null
+    rating             = null,
+    current_contest_id = null
 where user_id in (select id
                   from auth_user
                   where username regexp '^_oci_[a-z]+[0-9]+$');
@@ -20,7 +21,8 @@ update judge_profile
 set points             = 0,
     problem_count      = 0,
     performance_points = 0,
-    rating             = null
+    rating             = null,
+    current_contest_id = null
 where user_id in (select id
                   from auth_user
                   where username regexp '^oci_[a-z]+[0-9]+$'
