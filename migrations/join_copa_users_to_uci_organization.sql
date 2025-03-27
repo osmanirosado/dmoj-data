@@ -10,3 +10,13 @@ select p.id,
 from auth_user u
          join judge_profile p on u.id = p.user_id
 where u.username regexp '^copa[0-9]+$';
+
+update judge_profile_organizations
+set sort_value = 2
+where profile_id in (select p.id
+                     from judge_profile p
+                              join auth_user u on p.user_id = u.id
+                     where u.username regexp '^copa[0-9]+$')
+  and organization_id = (select id
+                         from judge_organization
+                         where short_name = 'Copa UCI');
