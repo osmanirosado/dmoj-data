@@ -27,3 +27,14 @@ where user_id in (select id
                   from auth_user
                   where username regexp '^oci_[a-z]+[0-9]+$'
                     and username <> 'oci_test2');
+
+# Delete primary user joins to non-official organizations
+delete
+from judge_profile_organizations
+where profile_id in (select p.id
+                     from judge_profile p
+                              join auth_user u on p.user_id = u.id
+                     where u.username regexp '^oci_[a-z]+[0-9]+$')
+  and organization_id not in (select id
+                              from judge_organization
+                              where short_name = 'OCI' or short_name like 'OCI-%');
