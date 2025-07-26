@@ -59,7 +59,7 @@ docker compose up db
 ```
 
 ```shell
-docker compose exec -T db sh -c 'mysql -u root -p"$MARIADB_ROOT_PASSWORD" dmoj' < dmoj_db_backup_2025-02-16.sql
+docker compose exec -T db sh -c 'mariadb -u root -p"$MARIADB_ROOT_PASSWORD" dmoj' < dmoj_db_backup_2025-02-16.sql
 ```
 
 ```shell
@@ -67,5 +67,5 @@ docker compose exec -T db sh -c 'mysqldump -u root -p"$MARIADB_ROOT_PASSWORD" --
 ```
 
 ```shell
-docker compose exec db sh -c 'mysql -u root -p"$MARIADB_ROOT_PASSWORD" dmoj'
+docker compose exec db sh -c 'mariadb -u root -p"$MARIADB_ROOT_PASSWORD" dmoj'
 ```

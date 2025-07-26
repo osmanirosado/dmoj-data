@@ -7,7 +7,7 @@ ssh dmoj
 ```
 
 ```shell
-docker exec -it dmoj_mysql sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD"'
+docker exec -it dmoj_mysql sh -c 'mariadb -u root -p"$MYSQL_ROOT_PASSWORD"'
 ```
 
 ```mariadb
@@ -25,5 +25,5 @@ where username like 'oci\_%';
 ```
 
 ```shell
-docker exec -it dmoj_mysql sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" dmoj'
+docker exec -it dmoj_mysql sh -c 'mariadb -u root -p"$MYSQL_ROOT_PASSWORD" dmoj'
 ```
