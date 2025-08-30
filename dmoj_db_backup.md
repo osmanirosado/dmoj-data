@@ -6,10 +6,10 @@
 ssh dmoj
 ```
 
-El comando `mysqldump` se ejecuta dentro del contenedor `dmoj_mysql`.
+El comando `mariadb-dump` se ejecuta dentro del contenedor `dmoj_mysql`.
 El backup se escribe en el script `dmoj_db_backup_2025-02-10.sql` fuera del contenedor.
 ```shell
-docker exec -i dmoj_mysql sh -c 'mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" --routines --triggers dmoj' > ~/dmoj_db_backup_2025-02-16.sql
+docker exec -i dmoj_mysql sh -c 'mariadb-dump -u root -p"$MYSQL_ROOT_PASSWORD" --routines --triggers dmoj' > ~/dmoj_db_backup_2025-02-16.sql
 ```
 
 Un archivo zip es creado para guardar el backup
@@ -63,7 +63,7 @@ docker compose exec -T db sh -c 'mariadb -u root -p"$MARIADB_ROOT_PASSWORD" dmoj
 ```
 
 ```shell
-docker compose exec -T db sh -c 'mysqldump -u root -p"$MARIADB_ROOT_PASSWORD" --routines --triggers --no-data dmoj' > dmoj_schema.sql
+docker compose exec -T db sh -c 'mariadb-dump -u root -p"$MARIADB_ROOT_PASSWORD" --routines --triggers --no-data dmoj' > dmoj_schema.sql
 ```
 
 ```shell
